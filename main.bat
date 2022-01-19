@@ -48,3 +48,14 @@ goto top
 
 :Helix
 cls
+goto top
+
+:Windowsrepair
+cls
+echo I am not liable for any damages/file loss to your system
+echo By pressing any key you agree to this
+pause
+cd assets
+cls
+DISM /Online /Cleanup-Image /RestoreHealth
+curl 
