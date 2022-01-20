@@ -10,11 +10,12 @@ echo ===========================================================================
 )
 pause >nul
 cls
+:top
 echo                                          Welcome to the Helix Suite
 echo                                                Version 1.0.0
 pause
 cd %programfiles%
-if exist HelixTools (goto start) else md HelixTools
+if exist HelixTools (goto start) else (md HelixTools)
 :start
 cls
 echo 1.Helix App Installer
@@ -58,6 +59,11 @@ pause
 cd assets
 cls
 DISM /Online /Cleanup-Image /RestoreHealth
-cd %AppData%\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
+cd %appdata%
+cd Microsoft\Windows\Start Menu\Programs\Startup
 curl -s https://raw.githubusercontent.com/pinguinooo/Helix-Suite/main/assets/autostart.bat -o autostart.bat
+cls
+echo Part 1/2 Completed please save all your work and press anykey to restart.
+pause
 shutdown /r
+cd %AppData%/Roaming/Microsoft/Windows/Start Menu/Programs/Startup
