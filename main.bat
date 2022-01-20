@@ -67,4 +67,3 @@ echo Part 1/2 Completed please save all your work and press anykey to restart.
 echo You will get a UAC Prompt when your computer restarts please accept it or the repair will fail and you will need to restart your computer again.
 pause
 shutdown /r
-cd %AppData%/Roaming/Microsoft/Windows/Start Menu/Programs/Startup
