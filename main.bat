@@ -19,9 +19,9 @@ if exist HelixTools (goto start) else (md HelixTools)
 :start
 cls
 echo 1.Helix App Installer
-echo 2.Windows Repair (requires restarts)
-echo 3.Ip Lookup
-echo 4.
+echo 2.Semi Windows Repair (requires restarts)
+echo 3.Full Windows Repair - Not Automated (requires restarts)
+echo 4.Ip Lookup
 echo 5.
 echo 6.
 echo 7.
@@ -33,8 +33,8 @@ set /p choice=Type the number to pick a preset :
 if not '%choice%'=='' set choice=%choice:~0,1%
 if '%choice%'=='1' goto Helix
 if '%choice%'=='2' goto Windowsrepair
-if '%choice%'=='3' goto iplookupstart
-if '%choice%'=='4' goto 
+if '%choice%'=='3' goto windowsrepairfull
+if '%choice%'=='4' goto iplookupstart
 if '%choice%'=='5' goto 
 if '%choice%'=='6' goto 
 if '%choice%'=='7' goto 
@@ -68,6 +68,12 @@ echo You will get a UAC Prompt when your computer restarts please accept it or t
 pause
 shutdown /r
 
+
+:windowsrepairfull
+cls
+color 3
+
+
 :iplookupstart
 cls
 title IP Lookup
@@ -94,7 +100,10 @@ echo.
 goto action
 :input
 echo.
+cls
 echo Please enter a valid input option.
+pause
+goto :menu
 echo.
 :action
 echo.
@@ -102,6 +111,7 @@ set /p action=Type your choice. :
 if '%action%'=='1' echo sUrl = "http://ipinfo.io/json" > %temp%\%webclient%.vbs & goto localip
 if '%action%'=='2' goto iplookup
 if '%action%'=='2' goto top
+if '%action%'=='3' goto start
 goto input
 :iplookup
 cls
